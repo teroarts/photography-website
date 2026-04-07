@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Tero Arts Photography</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1d2a57;
+      --accent: #13a87e;
+      --bg-light: #fdfbfb;
+      --text-main: #2d3748;
+      --text-muted: #718096;
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Outfit', sans-serif;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: var(--text-main);
+      background-color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-padding {
+      padding: 20px 15px;
+    }
+
+    /* Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .logo-image {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--primary);
+      padding: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 28px;
+      border-radius: 9999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 2px solid transparent;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    .btn-accent {
+      background-color: var(--accent);
+      color: white;
+    }
+
+    .btn-accent:hover {
+      background-color: #0f8a66;
+    }
+    
+    /* About Section */
+    .about-section {
+      background-color: var(--bg-light);
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .about-visual {
+      height: 600px;
+      border-radius: 1000px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .about-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin-bottom: 24px;
+      line-height: 1.1;
+      color: var(--text-main);
+    }
+
+    .about-content h1 i {
+      color: var(--primary);
+      font-style: italic;
+    }
+
+    .about-content p {
+      color: var(--text-muted);
+      font-size: 1.125rem;
+      margin-bottom: 24px;
+    }
+
+    .label {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .stats-container {
+      display: flex;
+      gap: 40px;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid #eaeaea;
+    }
+
+    .stat-item h4 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .stat-item p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      color: var(--text-main);
+      padding: 20px 40px;
+      border-top: 1px solid #eaeaea;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eaeaea;
+      margin-bottom: 30px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .footer-logo span {
+      color: var(--accent);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-location {
+      color: var(--text-muted);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-visual {
+        height: 400px;
+        order: -1;
+        width: 60%;
+        margin: auto;
+      }
+      .about-content {
+        text-align: center;
+      }
+      .stats-container {
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-light);
+        padding: 24px;
+        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        z-index: 100;
+        text-align: center;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .nav-container .btn-accent {
+        display: none;
+      }
+      .about-visual {
+        height: 400px;
+        order: -1;
+        width: 100%;
+        margin: auto;
+      }
+      .footer-content {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+      }
+      .stats-container {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <div class="container nav-container"> 
+     <a href="index.html" class="logo">
+        <img src="logo.png" alt="Tero Arts Logo" class="logo-image">
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#reviews">Reviews</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a href="index.html#contact" class="btn btn-accent">Book a Session</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about-section">
+    <div class="container section-padding about-grid">
+      <div class="about-visual">
+        <img src="profile.jpg" alt="Tero Arts Photographer" onerror="this.src='https://ui-avatars.com/api/?name=Tero+Arts&background=1d2a57&color=fff&size=600'">
+      </div>
+      <div class="about-content">
+        <span class="label">About me</span>
+        <h1>Hi, I'm <i>Tero.</i></h1>
+        <p>I'm a Wichita-based lifestyle and portrait photographer who believes every person has a story worth capturing beautifully. I specialize in vibrant, energetic photos that feel alive, not stiff or staged.</p>
+        <p>When you book with me, you're not just getting photos. You're getting an experience that's relaxed, fun, and totally you.</p>
+        
+        <div class="stats-container">
+          <div class="stat-item">
+            <h4>200+</h4>
+            <p>Sessions completed</p>
+          </div>
+          <div class="stat-item">
+            <h4>5★</h4>
+            <p>Google rating</p>
+          </div>
+          <div class="stat-item">
+            <h4>2wk</h4>
+            <p>Gallery turnaround</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <a href="index.html" class="footer-logo">
+          <img src="logo.png" alt="Tero Arts Logo" class="logo-image">
+        </a>
+        <div class="footer-links">
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">Google</a>
+        </div>
+        <div class="footer-location">
+          📍 Wichita, Kansas
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <script>document.write(new Date().getFullYear())</script> Tero Arts Photography. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+
+      // Close menu when clicking a link
+      const links = navLinks.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

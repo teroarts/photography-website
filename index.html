@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tero Arts Photography | Wichita, KS</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+    :root {
+      --primary: #1d2a57;
+      --accent: #13a87e;
+      --accent-hover: #0f8a66;
+      --highlight: #E0620D;
+      --bg-light: #f8f9fa;
+      --bg-dark: #1A1A1A;
+      --text-main: #333333;
+      --text-muted: #666666;
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-main);
+      line-height: 1.6;
+      background-color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      color: var(--primary);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-padding {
+      padding: 20px 0;
+    }
+
+    .label {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      display: block;
+      font-weight: 700;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 28px;
+      border-radius: 9999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 2px solid transparent;
+      font-family: var(--font-body);
+      font-size: 1rem;
+    }
+
+    .btn-accent {
+      background-color: var(--accent);
+      color: white;
+    }
+
+    .btn-accent:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #151e40;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .logo-image {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--primary);
+      padding: 8px;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+      background: url('https://picsum.photos/seed/hero-photo/1920/1080') center/cover no-repeat;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26, 26, 26, 0.9) 0%, rgba(26, 26, 26, 0.7) 20%) ;
+      z-index: 1;
+    }
+
+    .hero > .container {
+      position: relative;
+      z-index: 5;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .hero-content h1 {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+
+    .hero-content h1 i {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-content .label {
+      color: #ccc;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .hero .btn-outline {
+      border-color: white;
+      color: white;
+    }
+
+    .hero .btn-outline:hover {
+      background-color: white;
+      color: var(--primary);
+    }
+
+    /* Portfolio Section */
+    .portfolio-section {
+      background-color: #ededed;
+      color: var(--text-main);
+    }
+    .portfolio-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .portfolio-header h2 {
+      font-size: 2.5rem;
+      color: var(--text-main);
+    }
+    .portfolio-header p {
+      color: var(--text-muted);
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .portfolio-item {
+      position: relative;
+      height: 320px;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: var(--transition);
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      border: 4px solid transparent;
+    }
+    .portfolio-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 60%);
+      z-index: 1;
+    }
+    .portfolio-item-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.5s ease;
+    }
+    .portfolio-item:hover .portfolio-item-bg {
+      transform: scale(1.05);
+    }
+    .portfolio-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      border-color: #13a87e;
+    }
+    .portfolio-item h3 {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: white;
+      z-index: 2;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+      backdrop-filter: blur(5px);
+      padding: 24px;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-content {
+      background: var(--bg-dark);
+      color: white;
+      width: 100%;
+      max-width: 900px;
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      transform: translateY(20px);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      max-height: 90vh;
+    }
+    .modal-overlay.active .modal-content {
+      transform: translateY(0);
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 10;
+      color: white;
+      transition: var(--transition);
+    }
+    .modal-close:hover {
+      background: white;
+      color: var(--bg-dark);
+    }
+    .modal-body {
+      padding: 40px;
+      overflow-y: auto;
+    }
+    .modal-body h3 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: white;
+    }
+    .modal-body p {
+      color: #ccc;
+      margin-bottom: 24px;
+      font-size: 1.125rem;
+    }
+    .modal-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    .modal-gallery-item {
+      height: 220px;
+      border-radius: 12px;
+      background-size: cover;
+      background-position: center;
+      background-color: #333;
+    }
+
+    /* Services Section */
+    .services-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .services-header h2 {
+      font-size: 2.5rem;
+    }
+
+    .services-header p {
+      color: var(--text-muted);
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid #eaeaea;
+      border-radius: 16px;
+      padding: 40px 30px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 10px 30px rgba(19, 168, 126, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .service-price {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.125rem;
+    }
+
+    /* About Section */
+    .about-section {
+      background-color: var(--bg-light);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-visual {
+      height: 600px;
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      border-radius: 24px 200px 24px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 1.25rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .about-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+    }
+
+    .about-content p {
+      color: var(--text-muted);
+      font-size: 1.125rem;
+      margin-bottom: 20px;
+    }
+
+    .stats-container {
+      display: flex;
+      gap: 40px;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid #ddd;
+    }
+
+    .stat-item h4 {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 4px;
+      font-family: var(--font-body);
+    }
+
+    .stat-item p {
+      font-size: 0.875rem;
+      color: var(--text-main);
+      margin: 0;
+      font-weight: 500;
+    }
+
+    /* How It Works Section */
+    .how-it-works-header {
+      text-align: center;
+    }
+
+    .how-it-works-header h2 {
+      font-size: 2.5rem;
+    }
+
+    .how-it-works-header p {
+      color: var(--text-muted);
+      font-size: 1.125rem;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      padding: 0 10px;
+    }
+
+    .step-card {
+      text-align: center;
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background-color: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 auto 24px;
+      font-family: var(--font-heading);
+    }
+
+    .step-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .step-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Inquiry Form Section */
+    .inquiry-section {
+      background-color: var(--bg-light);
+    }
+
+    .inquiry-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .inquiry-header h2 {
+      font-size: 2.5rem;
+    }
+
+    .inquiry-header p {
+      color: var(--text-muted);
+      font-size: 1.125rem;
+    }
+
+    .form-card {
+      background: white;
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      border: 1px solid #eaeaea;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(19, 168, 126, 0.1);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      font-size: 1.125rem;
+      margin-top: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      color: var(--text-main);
+      padding: 20px 40px;
+      border-top: 1px solid #eaeaea;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eaeaea;
+      margin-bottom: 30px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .footer-logo span {
+      color: var(--accent);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-location {
+      color: var(--text-muted);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        text-align: center;
+        justify-content: center;
+      }
+      .hero-content p {
+        margin: 0 auto 2.5rem;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-light);
+        padding: 24px;
+        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        z-index: 100;
+        text-align: center;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .nav-container .btn-accent {
+        display: none;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .hero-buttons {
+        flex-direction: column;
+      }
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+      .modal-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .modal-body {
+        padding: 24px;
+      }
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+      .how-it-works-section {
+        padding-top: 2%;
+        padding-bottom: 2%;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .form-card {
+        padding: 24px;
+      }
+      .footer-content {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+      }
+      .stats-container {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+      }
+    }
+    /* New Reviews Section */
+    .reviews-section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #0b132b;
+      margin-bottom: 10px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+    }
+
+    .reviews-widget {
+      max-width: 1200px;
+      margin: 0 auto;
+      font-family: var(--font-body);
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    }
+
+    .reviews-banner {
+      background-color: #f8f9fc;
+      border-radius: 16px;
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .reviews-banner-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .google-logo-bg {
+      background: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .google-logo-bg svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .reviews-banner-text h3 {
+      font-size: 1.5rem;
+      color: #0b132b;
+      margin: 0 0 4px 0;
+      font-weight: 700;
+    }
+
+    .reviews-banner-rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.125rem;
+      color: #4b5563;
+    }
+
+    .rating-number {
+      font-weight: 700;
+      color: #0b132b;
+      font-size: 1.25rem;
+    }
+
+    .rating-stars {
+      color: #fbbc04;
+      letter-spacing: 2px;
+    }
+
+    .btn-share-feedback {
+      background-color: #1a73e8;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+
+    .btn-share-feedback:hover {
+      background-color: #1557b0;
+    }
+
+    .reviews-carousel-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .carousel-arrow {
+      background: white;
+      border: 1px solid #e5e7eb;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #6b7280;
+      flex-shrink: 0;
+      transition: all 0.2s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .carousel-arrow:hover {
+      background: #f3f4f6;
+      color: #111827;
+    }
+
+    .reviews-carousel-track {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;  /* IE and Edge */
+      padding: 10px 0;
+    }
+    .reviews-carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .review-card-new {
+      background: #fafafa;
+      border-radius: 16px;
+      padding: 32px;
+      min-width: 300px;
+      max-width: 320px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    }
+
+    .review-card-stars {
+      color: #fbbc04;
+      font-size: 1.25rem;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .review-card-text {
+      color: #4b5563;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .read-more {
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+    .review-card-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .author-avatar-text {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 1.125rem;
+    }
+
+    .author-name {
+      font-weight: 700;
+      color: #0b132b;
+      font-size: 0.95rem;
+    }
+
+    .carousel-pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 32px;
+    }
+
+    .carousel-pagination .dot {
+      width: 8px;
+      height: 8px;
+      background-color: #d1d5db;
+      border-radius: 50%;
+      transition: background-color 0.2s;
+    }
+
+    .carousel-pagination .dot.active {
+      background-color: #3b82f6;
+    }
+
+    .carousel-pagination .dot.small {
+      width: 4px;
+      height: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .reviews-banner {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+      .reviews-banner-left {
+        flex-direction: column;
+      }
+      .carousel-arrow {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="/logo.png" alt="Tero Arts Logo" class="logo-image">
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#reviews">Reviews</a>
+        <a href="about.html">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="btn btn-accent">Book a Session</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="label">Lifestyle &amp; Portrait Photography &middot; Wichita, KS</span>
+        <h1>Your story, <i>beautifully</i> told.</h1>
+        <p>Bold colors, real moments, and energy that jumps off the screen. Let's create photos you'll be obsessed with.</p>
+        <div class="hero-buttons">
+          <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="btn btn-primary">Book Your Session</button>
+          <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO SECTION -->
+  <section id="portfolio" class="portfolio-section section-padding">
+    <div class="container">
+      <div class="portfolio-header">
+        <span class="label">What I offer</span>
+        <h2>Sessions for every moment</h2>
+        <p>Whether it's just you, your crew, or the whole family, I've got a session made for you. Click on any category to see more photos.</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item" data-category="Family">
+          <div class="portfolio-item-bg" style="background-image: url('https://picsum.photos/seed/family/600/600')"></div>
+          <h3>Family</h3>
+        </div>
+        <div class="portfolio-item" data-category="Graduation">
+          <div class="portfolio-item-bg" style="background-image: url('https://picsum.photos/seed/grad/600/600')"></div>
+          <h3>Graduation</h3>
+        </div>
+        <div class="portfolio-item" data-category="Engagement">
+          <div class="portfolio-item-bg" style="background-image: url('https://picsum.photos/seed/engage/600/600')"></div>
+          <h3>Engagement</h3>
+        </div>
+        <div class="portfolio-item" data-category="Birthdays">
+          <div class="portfolio-item-bg" style="background-image: url('https://picsum.photos/seed/bday/600/600')"></div>
+          <h3>Birthdays</h3>
+        </div>
+        <div class="portfolio-item" data-category="Maternity">
+          <div class="portfolio-item-bg" style="background-image: url('https://picsum.photos/seed/maternity/600/600')"></div>
+          <h3>Maternity</h3>
+        </div>
+        <div class="portfolio-item" data-category="Headshots">
+          <div class="portfolio-item-bg" style="background-image: url('https://picsum.photos/seed/headshot/600/600')"></div>
+          <h3>Headshots</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS SECTION -->
+  <section id="reviews" class="container section-padding">
+    <h2 class="reviews-section-title">Our Happy Clients!</h2>
+
+    <div class="reviews-widget">
+      <!-- Top Banner -->
+      <div class="reviews-banner">
+        <div class="reviews-banner-left">
+          <div class="google-logo-bg">
+            <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          </div>
+          <div class="reviews-banner-text">
+            <h3>Google Reviews</h3>
+            <div class="reviews-banner-rating">
+              <span class="rating-number">5</span>
+              <span class="rating-stars">★★★★★</span>
+              <span class="rating-count">(64)</span>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn-share-feedback">Share your feedback</a>
+      </div>
+
+      <!-- Carousel -->
+      <div class="reviews-carousel-wrapper">
+        <button class="carousel-arrow left-arrow" aria-label="Previous reviews">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+
+        <div class="reviews-carousel-track" id="reviewsTrack">
+          <!-- Card 1 -->
+          <div class="review-card-new">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">I had a wonderful experience with Tero for my graduation photoshoot. He was patient, kind, and respectful throughout, making me feel at ease. The photos turned out beautifully, eac... <a href="#" class="read-more">Read more</a></p>
+            <div class="review-card-author">
+              <img src="https://ui-avatars.com/api/?name=darlene+cheruto&background=random&color=fff">
+              <span class="author-name">darlene cheruto</span>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="review-card-new">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Brian did an astounding job with our family photos! He has a very agreeable temperament, such a wonderful disposition about him that made us very comfortable during our session. H... <a href="#" class="read-more">Read more</a></p>
+            <div class="review-card-author">
+              <img src="https://ui-avatars.com/api/?name=John+Magomere&background=2e7d32&color=fff">
+              <span class="author-name">John Magomere</span>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="review-card-new">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Tero is truly exceptional. His prices are very reasonable, but the quality of his work far exceeds expectations. He's not only a master of his craft but also incredibly creative in... <a href="#" class="read-more">Read more</a></p>
+            <div class="review-card-author">
+              <img src="https://ui-avatars.com/api/?name=Asonganyi+Ateh+Atayo&background=random&color=fff">
+              <span class="author-name">Asonganyi Ateh Atayo</span>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="review-card-new">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Tero Arts had an incredible ability to make me feel comfortable and relaxed while giving creative direction throughout the shoot. His professionalism and genuine passion for his cr... <a href="#" class="read-more">Read more</a></p>
+            <div class="review-card-author">
+              <img src="https://ui-avatars.com/api/?name=Sandy+Korir&background=2e7d32&color=fff">
+              <span class="author-name">Sandy Korir</span>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="review-card-new">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Tero is an absolute magician with the camera! We hired him for our wedding and the photos are breathtaking. He captured every emotion perfectly and made the day so special. <a href="#" class="read-more">Read more</a></p>
+            <div class="review-card-author">
+              <img src="https://ui-avatars.com/api/?name=Emma+Thompson&background=random&color=fff">
+              <span class="author-name">Emma Thompson</span>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="review-card-new">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Highly recommend! Very professional and made my kids smile the whole time. The family portraits are stunning and we will cherish them forever. Thank you Tero Arts! <a href="#" class="read-more">Read more</a></p>
+            <div class="review-card-author">
+              <img src="https://ui-avatars.com/api/?name=David+Rodriguez&background=fbbc04&color=fff">
+              <span class="author-name">David Rodriguez</span>
+            </div>
+          </div>
+          <!-- Card 7 -->
+          <div class="review-card-new">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">The best photographer in Wichita! Our engagement shoot was so much fun and the pictures are vibrant and full of life. Can't wait for the wedding! <a href="#" class="read-more">Read more</a></p>
+            <div class="review-card-author">
+              <img src="https://ui-avatars.com/api/?name=Sarah+Mark&background=random&color=fff">
+              <span class="author-name">Sarah & Mark</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-arrow right-arrow" aria-label="Next reviews">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <!-- Pagination -->
+      <div class="carousel-pagination">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot small"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS SECTION -->
+  <section class="container section-padding how-it-works-section">
+    <div class="how-it-works-header">
+      <span class="label">How it works</span>
+      <h2>From inquiry to gallery in 4 steps</h2>
+      <p>Booking is simple, fast, and fully online.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Fill out the form</h3>
+        <p>Tell me about your vision, preferred date, and what you're looking for.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Lock in your date</h3>
+        <p>Pick your session time, sign your contract, and pay your deposit to confirm.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>We shoot!</h3>
+        <p>Show up, be yourself, and let's have fun. I'll guide you the whole time.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <h3>Get your gallery</h3>
+        <p>Your edited photos delivered to your Google Drive within 2 weeks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INQUIRY / BOOKING FORM SECTION -->
+  <section id="contact" class="inquiry-section">
+    <div class="container section-padding">
+      <div class="inquiry-header">
+        <span class="label">Let's connect</span>
+        <h2>Book your session</h2>
+        <p>Fill out the form below and I'll be in touch within 24–48 hours with your booking link.</p>
+      </div>
+      
+      <div class="form-card">
+        <!-- NOTE: The form below is a visual placeholder only. -->
+        <!-- Replace this entire form element with your Google Form embed code later. -->
+        <form onsubmit="event.preventDefault(); alert('Thanks for your inquiry! This is a placeholder form.');">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First name</label>
+              <input type="text" id="firstName" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last name</label>
+              <input type="text" id="lastName" class="form-control" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" class="form-control">
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sessionType">Session type</label>
+              <select id="sessionType" class="form-control" required>
+                <option value="" disabled selected>Select a session</option>
+                <option value="portrait">Portrait</option>
+                <option value="lifestyle">Lifestyle</option>
+                <option value="family">Family/Group</option>
+                <option value="couples">Couples</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="date">Preferred date</label>
+              <input type="date" id="date" class="form-control">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="source">How did you hear about me?</label>
+            <select id="source" class="form-control">
+              <option value="" disabled selected>Select an option</option>
+              <option value="instagram">Instagram</option>
+              <option value="facebook">Facebook</option>
+              <option value="google">Google</option>
+              <option value="referral">Referral from a friend</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="vision">Tell me about your vision</label>
+            <textarea id="vision" class="form-control" placeholder="Describe what you're envisioning — location ideas, vibe, occasion, number of people, anything you'd like me to know..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-accent submit-btn">Send Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <a href="#" class="footer-logo">
+          <img src="/logo.png" alt="Tero Arts Logo" class="logo-image">
+        </a>
+        <div class="footer-links">
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">Google</a>
+        </div>
+        <div class="footer-location">
+          📍 Wichita, Kansas
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <script>document.write(new Date().getFullYear())</script> Tero Arts Photography. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- PORTFOLIO MODAL -->
+  <div class="modal-overlay" id="portfolioModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal" aria-label="Close modal">&times;</button>
+      <div class="modal-body">
+        <h3 id="modalTitle">Category Gallery</h3>
+        <p id="modalDesc">Explore more photos from this category.</p>
+        <div class="modal-gallery-grid" id="modalGalleryGrid">
+          <!-- Images injected via JS -->
+        </div>
+        <div style="text-align: center;">
+          <button class="btn btn-accent" onclick="document.getElementById('closeModal').click(); document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Book a Session</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Modal Logic
+    const modal = document.getElementById('portfolioModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalGalleryGrid = document.getElementById('modalGalleryGrid');
+
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const category = item.getAttribute('data-category');
+        modalTitle.textContent = category + " Gallery";
+        
+        // Generate 6 placeholder images for the gallery
+        modalGalleryGrid.innerHTML = '';
+        for(let i=1; i<=6; i++) {
+          const imgDiv = document.createElement('div');
+          imgDiv.className = 'modal-gallery-item';
+          imgDiv.style.backgroundImage = `url('https://picsum.photos/seed/${category.toLowerCase()}${i}/400/400')`;
+          modalGalleryGrid.appendChild(imgDiv);
+        }
+        
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      });
+    });
+
+    const closeModal = () => {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    closeModalBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Reviews Carousel Logic
+    const track = document.getElementById('reviewsTrack');
+    const leftArrow = document.querySelector('.left-arrow');
+    const rightArrow = document.querySelector('.right-arrow');
+    
+    if (track && leftArrow && rightArrow) {
+      const getScrollAmount = () => {
+        const card = track.querySelector('.review-card-new');
+        return card ? card.offsetWidth + 24 : 344;
+      };
+
+      leftArrow.addEventListener('click', () => {
+        const scrollAmount = getScrollAmount();
+        if (track.scrollLeft <= 0) {
+          track.prepend(track.lastElementChild);
+          track.scrollLeft += scrollAmount;
+        }
+        track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+
+      rightArrow.addEventListener('click', () => {
+        const scrollAmount = getScrollAmount();
+        if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
+          track.appendChild(track.firstElementChild);
+          track.scrollLeft -= scrollAmount;
+        }
+        track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+    }
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+
+      // Close menu when clicking a link
+      const links = navLinks.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
